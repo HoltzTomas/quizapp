@@ -1,4 +1,4 @@
-class Question {
+class Question{
   final int id, answer;
   final String question;
   final List<String> options;
