@@ -2,6 +2,7 @@ import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:quiz_app/models/Question.dart';
+import 'package:quiz_app/score/score_screen.dart';
 
 //We use get package for our state managment
 
@@ -28,7 +29,7 @@ class QuestionController extends GetxController
   bool _isAnswered = false;
   bool get isAnswered => this._isAnswered;
 
-  int _correctAns;
+  int _correctAns = 0;
   int get correctAns => this._correctAns;
 
   int _selectedAns;
@@ -99,6 +100,9 @@ class QuestionController extends GetxController
       _animationController.reset();
 
       _animationController.forward().whenComplete(nextQuestion);
+    } else {
+      //Get package give us a simple way to navigate
+      Get.to( () => ScoreScreen() );
     }
   }
 

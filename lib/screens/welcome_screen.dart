@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/quiz/quiz_screen.dart';
 import 'package:websafe_svg/websafe_svg.dart';
@@ -40,7 +41,7 @@ class WelcomeScreen extends StatelessWidget {
                 Spacer(),
                 InkWell(
                   onTap: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => QuizScreen()));
+                    Get.to( () => QuizScreen() );
                   },
                   child: Container(
                     width: double.infinity,
